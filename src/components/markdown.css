@@ -1,0 +1,35 @@
+code.language-text {
+    background-color: #ff7043;
+    padding: 0.2em 0.2em;
+    border-radius: 0.2em;
+    color: #FFFFFF;
+}
+
+.gatsby-highlight {
+    background-color: black;
+    padding: 0.1em 0.4em;
+}
+
+.gatsby-highlight code.language-text {
+    background-color: inherit;
+    padding: 0em;
+}
+
+.language-shell { 
+    color : white;
+}
+table {
+    border-collapse: collapse;
+}
+table,
+table > thead,
+table > thead > tr,
+table > tbody > tr,
+table > thead > tr > th,
+table > tbody > tr > td {
+    border : 1px solid #ff7043;
+}
+
+table > thead {
+    background-color : #ffa270;
+}

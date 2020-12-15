@@ -12,12 +12,13 @@ first commit이후 꽤 많은 수정이 진행되었는데
 
 ## 에러 원인 : 
   * 등록된 npm 패키지의 버전이 구버전이었던 관계로 발생된 문제
+
 ## 에러 해결 : 
   * `npm update`
 
 ## 에러 현상 : 
 
-```
+``` shell
 5:56:18 PM: error "gatsby-plugin-manifest" threw an error while running the onPostBootstrap lifecycle:
 5:56:18 PM: Input file contains unsupported image format
 5:56:18 PM: 

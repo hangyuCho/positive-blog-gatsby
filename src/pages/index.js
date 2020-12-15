@@ -16,6 +16,7 @@ const IndexPage = ({data}) => {
     let cardDate  = frontmatter.date
     let cardDescription = frontmatter.description
     let cardTags  = frontmatter.tags
+
     list.push(
       <div style={{
         margin: `.4em auto`,
@@ -42,7 +43,7 @@ const IndexPage = ({data}) => {
 
   return (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" category="" />
     <p>블로그에 어서오세요</p>
     <p>멋진 걸 만들어 보자</p>
     {list}
