@@ -27,15 +27,16 @@ export default function Template({data, pageContext, location }) {
           <h1>{data.markdownRemark.frontmatter.title}</h1>
           <section dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </div>
-        {next && (
-        <Link to={next?.fields.slug} className={classes.buttonLink}>
-          <Button type="button" variant="contained" color="secondary">다음 글 : {next?.frontmatter.title}</Button>
-        </Link>
-        )}
 
         {previous && (
         <Link to={previous?.fields.slug} className={classes.buttonLink}>
           <Button type="button" variant="contained" color="secondary">이전 글 : {previous?.frontmatter.title}</Button>
+        </Link>
+        )}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {next && (
+        <Link to={next?.fields.slug} className={classes.buttonLink}>
+          <Button type="button" variant="contained" color="secondary">다음 글 : {next?.frontmatter.title}</Button>
         </Link>
         )}
     </Layout>

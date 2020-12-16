@@ -1,12 +1,22 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { makeStyles } from '@material-ui/core/styles';
+import { Alert, AlertTitle } from '@material-ui/lab';
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import IndexCard from "../components/parts/indexCard"
 
+const useStyles = makeStyles({
+  buttonLink: {
+    textDecoration: `none`,
+  }
+});
+
 const IndexPage = ({data}) => {
-  
+  const classes = useStyles();
+
   const list = []
   const cards = data.allMarkdownRemark.edges
 
@@ -18,34 +28,32 @@ const IndexPage = ({data}) => {
     let cardTags  = frontmatter.tags
 
     list.push(
-      <div style={{
-        margin: `.4em auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-        backgroundColor: `rgb(231 243 255)`,
-        borderRadius: `0.4em`
-      }}>
-        <Link 
-          style={{
-            textDecoration: `none`
-          }} 
-          to={card.node.fields.slug}>
-          <IndexCard 
-            title={cardTitle} 
-            date={cardDate} 
-            description={cardDescription} 
-            tags={cardTags}>
-          </IndexCard>
-        </Link>
-      </div>
+      <Link 
+        className={classes.buttonLink} 
+        to={card.node.fields.slug}>
+        <IndexCard 
+          title={cardTitle} 
+          date={cardDate} 
+          description={cardDescription} 
+          tags={cardTags}>
+        </IndexCard>
+      </Link>
     );
   }
 
   return (
   <Layout>
     <SEO title="Home" category="" />
-    <p>블로그에 어서오세요</p>
-    <p>멋진 걸 만들어 보자</p>
+
+    <Alert 
+      severity="info" 
+      style={{
+        margin: `0em 0em 1em 0em`
+      }}
+      >
+      <AlertTitle>블로그에 어서오세요</AlertTitle>
+      <strong> 멋진 걸 </strong>만들어 보자
+    </Alert>
     {list}
     <Link to="/"></Link>
   </Layout>

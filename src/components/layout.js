@@ -26,7 +26,9 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div style={{
+      backgroundColor: `rgb(236 222 218)`,
+    }}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Meun></Meun>
       <div
@@ -45,7 +47,7 @@ const Layout = ({ children }) => {
           <a href="/">onestar - blog</a>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 

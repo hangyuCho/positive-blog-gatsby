@@ -10,6 +10,8 @@ import Chip from '@material-ui/core/Chip';
 const useStyles = makeStyles({
     base: {
       minWidth: 275,
+      margin: `0em 0em 1em 0em`,
+      backgroundColor: `#fff4d2`,
     },
     bullet: {
       display: 'inline-block',
@@ -21,7 +23,7 @@ const useStyles = makeStyles({
     },
     pos: {
       marginBottom: 12,
-    },
+    }
   });
 
 const IndexCard = ({ title, date, description, tags }) => {
@@ -30,6 +32,10 @@ const IndexCard = ({ title, date, description, tags }) => {
     for(let tag of tags.split(" ")) {
       list.push(
         <Chip
+            style={{
+              backgroundColor: `aliceblue`,
+              marginLeft: `0.4em`
+            }}
             avatar={<Avatar>#</Avatar>}
             label={tag}
             clickable
