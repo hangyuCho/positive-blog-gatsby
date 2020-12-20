@@ -35,6 +35,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-gantt-timeline": "^0.4.3",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
