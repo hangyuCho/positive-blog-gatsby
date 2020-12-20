@@ -19,6 +19,7 @@ const IndexPage = ({data}) => {
 
   const list = []
   const cards = data.allMarkdownRemark.edges
+  var i = -1
 
   for(let card of cards){
     let frontmatter = card.node.frontmatter
@@ -26,12 +27,16 @@ const IndexPage = ({data}) => {
     let cardDate  = frontmatter.date
     let cardDescription = frontmatter.description
     let cardTags  = frontmatter.tags
+    
+    i++
 
     list.push(
       <Link 
+        key={i}
         className={classes.buttonLink} 
         to={card.node.fields.slug}>
-        <IndexCard 
+        <IndexCard
+          key={i}
           title={cardTitle} 
           date={cardDate} 
           description={cardDescription} 
@@ -44,7 +49,6 @@ const IndexPage = ({data}) => {
   return (
   <Layout>
     <SEO title="Home" category="" />
-
     <Alert 
       severity="info" 
       style={{

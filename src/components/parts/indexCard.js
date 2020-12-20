@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 
 const useStyles = makeStyles({
@@ -29,14 +28,16 @@ const useStyles = makeStyles({
 const IndexCard = ({ title, date, description, tags }) => {
     const classes = useStyles();
     const list = []
+    let i = -1
     for(let tag of tags.split(" ")) {
+      i++
       list.push(
         <Chip
+            key={i}
             style={{
               backgroundColor: `aliceblue`,
               marginLeft: `0.4em`
             }}
-            avatar={<Avatar>#</Avatar>}
             label={tag}
             clickable
             color="primary"
@@ -57,8 +58,8 @@ const IndexCard = ({ title, date, description, tags }) => {
             {description}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            {list}
           </Typography>
+          {list}
         </CardContent>
       </Card>
     )

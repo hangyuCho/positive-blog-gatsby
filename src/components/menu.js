@@ -41,49 +41,52 @@ const Menu = ({ menu }) => {
 
   
 
-  const list = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'bottom',
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['About Me'].map((text, index) => (
-          <Link 
-            className={classes.menuLink}
-            to={`/aboutMe`}>
-            <ListItem button key={text}>
-              <ListItemIcon
-                className={classes.iconCard}>
-                <span role="img" aria-label="❤️">❤️</span>
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['Home'].map((text, index) => (
-
-          <Link 
-            className={classes.menuLink}
-            to={`/`}>
-            <ListItem button key={text}>
-              <ListItemIcon
-                className={classes.iconCard}>
-                <span role="img" aria-label="⭐️">⭐️</span>
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </div>
-  );
+  const list = (anchor) => {
+    return (
+      <div
+        className={clsx(classes.list, {
+          [classes.fullList]: anchor === 'bottom',
+        })}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <List>
+          {['About Me'].map((text, index) => (
+            <Link 
+              key={index}
+              className={classes.menuLink}
+              to={`/aboutMe`}>
+              <ListItem button key={text}>
+                <ListItemIcon
+                  className={classes.iconCard}>
+                  <span role="img" aria-label="❤️">❤️</span>
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['Home'].map((text, index) => (
+            <Link 
+              key={index}
+              className={classes.menuLink}
+              to={`/`}>
+              <ListItem button key={text}>
+                <ListItemIcon
+                  className={classes.iconCard}>
+                  <span role="img" aria-label="⭐️">⭐️</span>
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+      </div>
+    )
+  }
 
   return (
     <div>
