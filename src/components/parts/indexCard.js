@@ -12,11 +12,6 @@ const useStyles = makeStyles({
       margin: `0em 0em 1em 0em`,
       backgroundColor: `#fff4d2`,
     },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
     title: {
       fontSize: 14,
     },
